@@ -1,6 +1,92 @@
-\section{First Part}
-is here
-\subsection{Instantaneous Velocity}
+\section{Introduction}
+\subsection{Purpose}
+\paragraph{}
+This document focuses on Requirements Analysis and Specification Document (RASD) and contains the description of the main goals, the domain and its representation through some models, the analysis of the scenario with the uses cases that describe them, the list of the most important requirements and specifications that characterize the development of the software described below.
 
-\subsection{Defining Instantaneous Velocity Using the Idea of a Limit}
+\paragraph{}
+It also includes the research about the interfaces, functional and non-functional requirements and the attributes that distinguish the quality of the system.
+
+\paragraph{}
+This document has the purpose to guide the developer in the realization of the software called CLup, a Customers Line-up application.
+
+\paragraph{}
+Finally, to understand better the development of the document, it contains the history that describes how it is made, with the references used and the description of its structure.
+
+\subsection{Scope}
+
+\paragraph{}
+The software wants give them the possibility to line up for a super market and notify them when it's their turn.
+
+\begin{itemize}
+\item \textbf{salam:}
+\item sdafs
+\end{itemize}
+
+
+\subsubsection{World phenomena}
+% World phenomena table 
+\newcommand{\Vline}{\color{lightBlueBorder} \vrule width 1pt}
+\def\arraystretch{1.5}
+
+\arrayrulecolor{lightBlueBorder}
+\setlength\arrayrulewidth{1pt}
+\rowcolors{2}{white}{lightBlue}
+\setlength\LTleft{0pt}
+
+\begin{longtable}{!\Vline c !\Vline l !\Vline} 
+    \hline
+    \textbf{WP1} & User wants to go shopping  \\
+    \textbf{WP2} & User get a ticket from manager  \\  \hline
+\end{longtable}
+
+\subsubsection{Shared phenomena}
+% Shared phenomena table 
+\renewcommand{\Vline}{\color{lightBlueBorder} \vrule width 1pt}
+\def\arraystretch{1.5}
+
+\arrayrulecolor{lightBlueBorder}
+\setlength\arrayrulewidth{1pt}
+\rowcolors{2}{white}{lightBlue}
+\setlength\LTleft{0pt}
+
+\begin{longtable}{ !\Vline c !\Vline l !\Vline}
+    \hline
+    \textbf{SP1} & Receive a notification that it is user turn for shopping \\
+    \textbf{SP2} & Receive a notification that it is better user to approach to shop based on user's location \\
+    \textbf{SP3} & Generate QR code \\
+    \textbf{SP4} & User choose which category wants to buy \\
+    \textbf{SP5} & Manager define his store \\
+    \textbf{SP6} & Receive information for booking a visit \\
+    \textbf{SP7} & Suggest free slots to user \\
+    \textbf{SP8} & Read QR code for entering the store \\
+    \hline
+\end{longtable}
+
+\subsubsection{Goals}
+% Goal table 
+\renewcommand{\Vline}{\color{lightBlueBorder} \vrule width 1pt}
+\def\arraystretch{1.5}
+
+\arrayrulecolor{lightBlueBorder}
+\setlength\arrayrulewidth{1pt}
+\rowcolors{2}{white}{lightBlue}
+\setlength\LTleft{0pt}
+
+\begin{longtable}{ !\Vline c !\Vline l !\Vline}
+    \hline
+    \textbf{G1} & Allow user to line up for a specific store \\
+    \textbf{G2} & Allow user to book a visit for a specific store \\
+    \textbf{G3} & Allow store to generate a ticket for whom have not electronic devices \\
+    \textbf{G4} & Estimate the waiting time for each person \\
+    \textbf{G5} & Notify user for start to going to store \\
+    \textbf{G6} & Notify user when it is their turn to go to store \\
+    \textbf{G7} & Suggest people free slots to book a visit \\
+    \textbf{G8} & Allow manager to define their store in the system \\
+    \hline
+\end{longtable}
+
+\subsection{Definition, Acronyms, Abbreviations}
+\subsection{Revision history}
+\subsection{Reference Documents}
+\subsection{Document Structure}
 \vfill
