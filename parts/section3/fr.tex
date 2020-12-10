@@ -10,7 +10,7 @@
 
 \begin{longtable}{ !\Vline c !\Vline p{0.9\linewidth} !\Vline}
     \hline
-    \textbf{R1} & Users are unauthenticated\\
+    \textbf{R1} & Users certified with an authentication\\
     \textbf{R2} & Managers certified with an authentication\\
     \textbf{R3} & Managers should register to the application by a form with mandatory fields\\
     \textbf{R4} & Only managers can create shop\\
@@ -47,7 +47,257 @@
 \subsubsection{Mapping}
 
 \subsubsection{Use cases}
-\paragraph{Use case Description}
+\paragraph{Use case Description} \hfill
+\begin{itemize}
+
+\item \textbf{Register}
+\arrayrulecolor{tableBorderColor}
+\setlength\arrayrulewidth{1pt}
+\rowcolors{2}{white}{tableHighlightColor}
+\setlength\LTleft{0pt}
+\begin{longtable}{ !\Vline c !\Vline p{0.9\linewidth} !\Vline}
+    \hline
+    \textbf{Name} & \textbf{Register}\\
+    \textbf{ID} & UC1\\
+    \textbf{Actors} & Super User\\
+    \textbf{Entry Condition} & Super User has internet connection on his/her device\\
+    \textbf{Event flow} & 
+    \begin{enumerate}
+        \item Super user see the landing page
+        \item Super user click on the "sign up" button
+        \item Super user fill all the mandatory fields
+        \item Super user choose his type between manager or user
+        \item Super user fill extra fields based on his type
+        \item Super user click on "Register" button
+        \item The system validate the filled data
+        \item The system confirm the registration
+        \item The system save the super user on database
+    \end{enumerate}\\
+    \textbf{Exit Condition} & Super user is successfully registered in the system\\
+    \textbf{Exceptions} & 
+    If the below conditions happened the application return a suitable error in message and return to register page.
+    \begin{itemize}
+        \item Super user is already existed in the system
+        \item Super user doesn't fill all mandatory fields
+        \item Super user sends invalid data
+    \end{itemize}
+    
+    \\
+    \hline
+\end{longtable}
+
+\item \textbf{Login}
+\arrayrulecolor{tableBorderColor}
+\setlength\arrayrulewidth{1pt}
+\rowcolors{2}{white}{tableHighlightColor}
+\setlength\LTleft{0pt}
+\begin{longtable}{ !\Vline c !\Vline p{0.9\linewidth} !\Vline}
+    \hline
+    \textbf{Name} & \textbf{Login}\\
+    \textbf{ID} & UC2\\
+    \textbf{Actors} & Super User\\
+    \textbf{Entry Condition} & Super User has internet connection and it already registered to the application\\
+    \textbf{Event flow} & 
+    \begin{enumerate}
+        \item Super user see the landing page
+        \item Super user click on the "sign in" button
+        \item Super user fill username and password fields
+        \item Super user click on "Login" button
+        \item The system check the credential
+        \item The system confirm the registration
+        \item The system return the home page of user
+    \end{enumerate}\\
+    \textbf{Exit Condition} & Super user has access to the service of CLup\\
+    \textbf{Exceptions} & 
+    If the below conditions happened the application return a suitable error in message and return to login page.
+    \begin{itemize}
+        \item Super user is not exist in the system
+        \item Super user doesn't fill all mandatory fields
+        \item Super user password is invalid
+    \end{itemize}
+    
+    \\
+    \hline
+\end{longtable}
+
+\item \textbf{Create shop}
+\arrayrulecolor{tableBorderColor}
+\setlength\arrayrulewidth{1pt}
+\rowcolors{2}{white}{tableHighlightColor}
+\setlength\LTleft{0pt}
+\begin{longtable}{ !\Vline c !\Vline p{0.9\linewidth} !\Vline}
+    \hline
+    \textbf{Name} & \textbf{Create Shop}\\
+    \textbf{ID} & UC3\\
+    \textbf{Actors} & Manager\\
+    \textbf{Entry Condition} & Manager has internet connection\\
+    \textbf{Event flow} & 
+    \begin{enumerate}
+        \item Manager see the home page
+        \item Manager click on the "add a shop" button
+        \item Manager set shop title
+        \item Manager set location of the shop
+        \item Manager set start and end hour of the shop
+        \item Manager set capacity of the shop
+        \item manager click on "new category"
+        \item manager set capacity and title of category
+        \item click on "end" button or return to 7.
+        \item manager choose AF1 or AF2 enable by checkbox.
+        \item manager click on "Submit" button.
+        \item The system shows all the detail of shop.
+        \item manager click on "Accept" button.
+        \item The system add shop to data base.
+    \end{enumerate}\\
+    \textbf{Exit Condition} & Shop successfully created\\
+    \textbf{Exceptions} & If the data of shop is not valid the sytem will return error\\
+    \hline
+\end{longtable}
+
+\item \textbf{Update shop}
+\arrayrulecolor{tableBorderColor}
+\setlength\arrayrulewidth{1pt}
+\rowcolors{2}{white}{tableHighlightColor}
+\setlength\LTleft{0pt}
+\begin{longtable}{ !\Vline c !\Vline p{0.9\linewidth} !\Vline}
+    \hline
+    \textbf{Name} & \textbf{Create Shop}\\
+    \textbf{ID} & UC4\\
+    \textbf{Actors} & Manager\\
+    \textbf{Entry Condition} & Manager has internet connection and the shop is exists\\
+    \textbf{Event flow} & 
+    \begin{enumerate}
+        \item Manager see the home page
+        \item Manager click on the "edit" button in specific shop
+        \item Manager change fields it like
+        \item manager click on "Submit" button.
+        \item The system shows all the detail of shop.
+        \item manager click on "Accept" button.
+        \item The system update the shop in data base.
+        \item The system update recalculate the estimated time by new values.
+    \end{enumerate}\\
+    \textbf{Exit Condition} & Shop successfully updated\\
+    \textbf{Exceptions} & 
+        If the below conditions happened the application return a suitable error.
+    \begin{itemize}
+        \item Shop is not existed in the system.
+        \item Manager doesn't have access to change that shop.
+        \item Fields values are invalid.
+    \end{itemize}\\
+    \hline
+\end{longtable}
+
+\item \textbf{See list of shops}
+\arrayrulecolor{tableBorderColor}
+\setlength\arrayrulewidth{1pt}
+\rowcolors{2}{white}{tableHighlightColor}
+\setlength\LTleft{0pt}
+\begin{longtable}{ !\Vline c !\Vline p{0.9\linewidth} !\Vline}
+    \hline
+    \textbf{Name} & \textbf{See list of shops}\\
+    \textbf{ID} & UC5\\
+    \textbf{Actors} & User\\
+    \textbf{Entry Condition} & User has internet connection and must accept GPS permission\\
+    \textbf{Event flow} & 
+    \begin{enumerate}
+        \item User get latitude and longitude from GPS
+        \item User send a request to get list of shops
+        \item The system extract latitude and longitude from user request
+        \item The system get shop list from database
+        \item The system order shops based on latitude and longitude and characteristic of user.
+        \item The system shows the list of shops to user.
+    \end{enumerate}\\
+    \textbf{Exit Condition} & User see list of shops\\
+    \textbf{Exceptions} & None\\
+    \hline
+\end{longtable}
+
+
+\item \textbf{Generate ticket}
+\arrayrulecolor{tableBorderColor}
+\setlength\arrayrulewidth{1pt}
+\rowcolors{2}{white}{tableHighlightColor}
+\setlength\LTleft{0pt}
+\begin{longtable}{ !\Vline c !\Vline p{0.9\linewidth} !\Vline}
+    \hline
+    \textbf{Name} & \textbf{Generate ticket}\\
+    \textbf{ID} & UC6\\
+    \textbf{Actors} & User, Clerk\\
+    \textbf{Entry Condition} & user or clerk wants to add to a line-up queue\\
+    \textbf{Event flow} & 
+    \begin{enumerate}
+        \item The system extract the user turn.
+        \item The system extract the user id.
+        \item The system extract the shop id.
+        \item The system extract the line-up queue id.
+        \item The system generate a QR code based on those information.
+        \item The system saves generated QR code to database.
+        \item The system shows the generated QR code to user.
+    \end{enumerate}\\
+    \textbf{Exit Condition} & QR code generated successfully \\
+    \textbf{Exceptions} & None\\
+    \hline
+\end{longtable}
+
+\item \textbf{Estimate waiting time}
+\arrayrulecolor{tableBorderColor}
+\setlength\arrayrulewidth{1pt}
+\rowcolors{2}{white}{tableHighlightColor}
+\setlength\LTleft{0pt}
+\begin{longtable}{ !\Vline c !\Vline p{0.9\linewidth} !\Vline}
+    \hline
+    \textbf{Name} & \textbf{Estimate waiting time}\\
+    \textbf{ID} & UC7\\
+    \textbf{Actors} & User, Clerk\\
+    \textbf{Entry Condition} & user or clerk wants to add to a line-up queue\\
+    \textbf{Event flow} & 
+    \begin{enumerate}
+        \item The system extract the users from line-up queue.
+        \item The system extract the shop.
+        \item The system extract the new user wants to add in line up.
+        \item The system get history of users shopping from database.
+        \item The system extract new user wants shop from which categories.
+        \item based on previous behavior of user and categories system estimate shopping duration of user.
+        \item based on previous users in queue, system estimate waiting time for user.
+    \end{enumerate}\\
+    \textbf{Exit Condition} & The system estimate the user waiting time \\
+    \textbf{Exceptions} & Check the shops, users and line-up queue are really exists. if they are not exist send a proper message.\\
+    \hline
+\end{longtable}
+
+\item \textbf{Add to Line-up Queue}
+\arrayrulecolor{tableBorderColor}
+\setlength\arrayrulewidth{1pt}
+\rowcolors{2}{white}{tableHighlightColor}
+\setlength\LTleft{0pt}
+\begin{longtable}{ !\Vline c !\Vline p{0.9\linewidth} !\Vline}
+    \hline
+    \textbf{Name} & \textbf{Add to Line-up Queue}\\
+    \textbf{ID} & UC8\\
+    \textbf{Actors} & User, Clerk\\
+    \textbf{Entry Condition} & user choose specific shop to go to one of it lines up queue or user book a visit, clerk wants to add person do not use application to a line-up queue\\
+    \textbf{Event flow} & 
+    \begin{enumerate}
+        \item User choose a shop to add line up or book a visit for that shop or clerk click on add to line-up.
+        \item The system find that line-up queue
+        \item The system get the generate number of user in queue.
+        \item The system pass user, shop and queue to [UC6].
+        \item The system get the QR code of ticket.
+        \item The system pass user, shop and queue to [UC7].
+        \item The system get the estimation waiting time for user.
+        \item The system get current location of user.
+        \item The system get calculate traveling time estimation for user.
+        \item The system set interval to send notification for approach a user.
+        \item The system add user to correct line-up queue.
+        \item The system send ticket and estimated time to user.
+    \end{enumerate}\\
+    \textbf{Exit Condition} & add user to line-up queue \\
+    \textbf{Exceptions} & None\\
+    \hline
+\end{longtable}
+
+\end{itemize}
+
+
 \paragraph{Use case Diagram}
 
 
