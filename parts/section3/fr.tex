@@ -295,7 +295,179 @@
     \hline
 \end{longtable}
 
+\item \textbf{Book a visit}
+\arrayrulecolor{tableBorderColor}
+\setlength\arrayrulewidth{1pt}
+\rowcolors{2}{white}{tableHighlightColor}
+\setlength\LTleft{0pt}
+\begin{longtable}{ !\Vline c !\Vline p{0.9\linewidth} !\Vline}
+    \hline
+    \textbf{Name} & \textbf{Book a visit}\\
+    \textbf{ID} & UC9\\
+    \textbf{Actors} & User\\
+    \textbf{Entry Condition} & The shop AF1 is activate and user choose book\\
+    \textbf{Event flow} & 
+    \begin{enumerate}
+        \item User choose a shop.
+        \item User click on "book a visit" button.
+        \item The user choose date and time.
+        \item The system returns items' category of that shop.
+        \item User add category of items wants to buy.
+        \item Based on date user choose system finds a suitable queue.
+        \item Pass the parameters to [UC8] and get the result.
+        \item Get the ticket and show it.
+    \end{enumerate}\\
+    \textbf{Exit Condition} & user successfully book a visit \\
+    \textbf{Exceptions} & If user the queue capacity is full\\
+    \hline
+\end{longtable}
+
+\item \textbf{See ticket}
+\arrayrulecolor{tableBorderColor}
+\setlength\arrayrulewidth{1pt}
+\rowcolors{2}{white}{tableHighlightColor}
+\setlength\LTleft{0pt}
+\begin{longtable}{ !\Vline c !\Vline p{0.9\linewidth} !\Vline}
+    \hline
+    \textbf{Name} & \textbf{See ticket}\\
+    \textbf{ID} & UC10\\
+    \textbf{Actors} & User\\
+    \textbf{Entry Condition} & The user has a ticket for that shop\\
+    \textbf{Event flow} & 
+    \begin{enumerate}
+        \item User choose a shop.
+        \item User click on "ticket" button.
+        \item The system find the ticket.
+        \item The system calculate remaining time.
+        \item The system return the QR code and estimation time.
+    \end{enumerate}\\
+    \textbf{Exit Condition} & user get the ticket \\
+    \textbf{Exceptions} & If user is doesn't have the ticket for that shop system return a message\\
+    \hline
+\end{longtable}
+
+\item \textbf{Notify user for approach}
+\arrayrulecolor{tableBorderColor}
+\setlength\arrayrulewidth{1pt}
+\rowcolors{2}{white}{tableHighlightColor}
+\setlength\LTleft{0pt}
+\begin{longtable}{ !\Vline c !\Vline p{0.9\linewidth} !\Vline}
+    \hline
+    \textbf{Name} & \textbf{Notify user for approach}\\
+    \textbf{ID} & UC11\\
+    \textbf{Actors} & Time\\
+    \textbf{Entry Condition} & Timer that [UC8] set, finished\\
+    \textbf{Event flow} & 
+    \begin{enumerate}
+        \item The system sends a request to notification system.
+        \item The notification system send a notification to user.
+    \end{enumerate}\\
+    \textbf{Exit Condition} & user get notification \\
+    \textbf{Exceptions} & none\\
+    \hline
+\end{longtable}
+
+\item \textbf{Print ticket}
+\arrayrulecolor{tableBorderColor}
+\setlength\arrayrulewidth{1pt}
+\rowcolors{2}{white}{tableHighlightColor}
+\setlength\LTleft{0pt}
+\begin{longtable}{ !\Vline c !\Vline p{0.9\linewidth} !\Vline}
+    \hline
+    \textbf{Name} & \textbf{Print ticket}\\
+    \textbf{ID} & UC13\\
+    \textbf{Actors} & Clerk\\
+    \textbf{Entry Condition} & A person doesn't use mobile ask clerk for a ticket\\
+    \textbf{Event flow} & 
+    \begin{enumerate}
+        \item The clerk click "ticket" on ticket machine.
+        \item The system add an anonymous user to queue by [UC9].
+        \item The system show ticket.
+        \item The clerk click on "print" button.
+        \item The printer print the ticket.
+    \end{enumerate}\\
+    \textbf{Exit Condition} & anonymous user got to queue and ticket printed\\
+    \textbf{Exceptions} & none\\
+    \hline
+\end{longtable}
+
+\item \textbf{Scan QR code for entrance}
+\arrayrulecolor{tableBorderColor}
+\setlength\arrayrulewidth{1pt}
+\rowcolors{2}{white}{tableHighlightColor}
+\setlength\LTleft{0pt}
+\begin{longtable}{ !\Vline c !\Vline p{0.9\linewidth} !\Vline}
+    \hline
+    \textbf{Name} & \textbf{Scan QR code for entrance}\\
+    \textbf{ID} & UC14\\
+    \textbf{Actors} & Clerk\\
+    \textbf{Entry Condition} & A person want to enter the shop\\
+    \textbf{Event flow} & 
+    \begin{enumerate}
+        \item The person show his/her ticket on mobile or printed ticket.
+        \item The clerk scan QR code.
+        \item The system check can the user enter.
+        \item The system remove user from line-up queue.
+        \item The system change ticket status invalid for entrance.
+        \item The system set start time for user.
+    \end{enumerate}\\
+    \textbf{Exit Condition} & user can enter the shop\\
+    \textbf{Exceptions} & If it isn't user turn red flash light blink on scanner\\
+    \hline
+\end{longtable}
+
+\item \textbf{checkout}
+\arrayrulecolor{tableBorderColor}
+\setlength\arrayrulewidth{1pt}
+\rowcolors{2}{white}{tableHighlightColor}
+\setlength\LTleft{0pt}
+\begin{longtable}{ !\Vline c !\Vline p{0.9\linewidth} !\Vline}
+    \hline
+    \textbf{Name} & \textbf{checkout}\\
+    \textbf{ID} & UC15\\
+    \textbf{Actors} & Clerk\\
+    \textbf{Entry Condition} & A person want to checkout the shop\\
+    \textbf{Event flow} & 
+    \begin{enumerate}
+        \item The person show his/her ticket on mobile or printed ticket.
+        \item The clerk scan QR code.
+        \item The system find the user.
+        \item The clerk scan bar code of items with his/her scanner.
+        \item The system find category of items and add to user history.
+        \item The system set end time for user and calculate the duration.
+        \item The system add user history to database.
+        \item The system call the next person turn.
+        \item The system set a 1 minute timer to notify next person.
+    \end{enumerate}\\
+    \textbf{Exit Condition} & user checkout and exit the shop\\
+    \textbf{Exceptions} & If user lost his ticket act him as an anonymous user.\\
+    \hline
+\end{longtable}
+
+\item \textbf{checkout}
+\arrayrulecolor{tableBorderColor}
+\setlength\arrayrulewidth{1pt}
+\rowcolors{2}{white}{tableHighlightColor}
+\setlength\LTleft{0pt}
+\begin{longtable}{ !\Vline c !\Vline p{0.9\linewidth} !\Vline}
+    \hline
+    \textbf{Name} & \textbf{checkout}\\
+    \textbf{ID} & UC16\\
+    \textbf{Actors} & Time\\
+    \textbf{Entry Condition} & Timer that [UC15] set finished.\\
+    \textbf{Event flow} & 
+    \begin{enumerate}
+        \item The system change ticket of user to valid.
+        \item The system sends a request to notification system.
+        \item The notification system send a notification to user.
+    \end{enumerate}\\
+    \textbf{Exit Condition} & user get notification\\
+    \textbf{Exceptions} & None\\
+    \hline
+\end{longtable}
+
 \end{itemize}
+
 
 
 \paragraph{Use case Diagram}
