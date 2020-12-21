@@ -1,0 +1,27 @@
+\section{Formal Analysis Using Alloy}
+
+\input{parts/section4/alloy.sty}
+
+% define a style for the alloy language
+\lstdefinestyle{alloy}{
+	commentstyle=\itshape,
+	keywordstyle=\bfseries,
+	stringstyle=\itshape,
+}
+
+% define command for inline use; usage: \alloy|sig A {f: some B}|
+\def\alloy{\lstinline[
+	language=alloy,
+	style=alloy,
+	basicstyle=\ttfamily\small
+]}
+
+\renewcommand{\ttdefault}{pcr}  % font type with bfseries and ttfamily
+% general definitions
+\lstset{
+	basicstyle=\ttfamily\large
+}
+
+\subsection{Alloy Code}
+\lstinputlisting[language=alloy,breaklines=true]{parts/section4/alloy.als}
+\clearpage
