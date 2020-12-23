@@ -1,0 +1,207 @@
+\section{Introduction}
+\subsection{Purpose}
+\paragraph{}
+This document focuses on Requirements Analysis and Specification Document (RASD) and contains the description of the main goals, the domain and its representation through some models, the analysis of the scenario with the uses cases that describe them, the list of the most important requirements and specifications that characterize the development of the software described below.
+
+\paragraph{}
+It also includes the research about the interfaces, functional and non-functional requirements and the attributes that distinguish the quality of the system.
+
+\paragraph{}
+This document has the purpose to guide the developer in the realization of the software called CLup, a Customers Line-up application.
+
+\paragraph{}
+Finally, to understand better the development of the document, it contains the history that describes how it is made, with the references used and the description of its structure.
+
+\subsection{Scope}
+
+\paragraph{}
+The software wants give them the possibility to line up for a super market and notify them when it's their turn.
+
+\begin{itemize}
+\item \textbf{basic function:} Allow application to retrieve a number for users to be in the line waiting for their numbers to be close. Then they will go and stand in the line but in a way that they wont waste their time standing in a queue for long time
+\item \textbf{advanced function 1:} The second functionality point out about booking a visit from application for supermarket which is similar to booking a visit for museums but has some differences. This feature let application for customer to indicate the approximate expected duration of the visit. Alternatively, for long- 
+term customers, this time could be inferred by the system based on an analysis of the previous visits.  
+The application might also allow users to indicate, if not the exact list of items that they intend to  
+purchase, the categories of items that they intend to buy. This would allow the application to plan visits  
+in a finer way, for example allowing more people in the store, if it knows that they are going to buy
+\item \textbf{advanced function 2:} Other feature is that the application might have include a suggestion of alternative slots (in the same  
+day, or in different days) for visiting the store, to balance out the number of people in the store, the  
+suggestion of different stores of the same chain (or even of different chains, if the application is chain- 
+independent) if the preferred one is not available, or the periodic notification of available slots in a  
+day/time range.
+\end{itemize}
+
+
+\subsubsection{World phenomena}
+% World phenomena table 
+\newcommand{\Vline}{\color{tableBorderColor} \vrule width 1pt}
+\def\arraystretch{1.5}
+
+\arrayrulecolor{tableBorderColor}
+\setlength\arrayrulewidth{1pt}
+\rowcolors{2}{white}{tableHighlightColor}
+\setlength\LTleft{0pt}
+
+\begin{longtable}{!\Vline c !\Vline l !\Vline} 
+    \hline
+    \textbf{WP1} & User wants to go shopping  \\
+    \textbf{WP2} & User get a ticket from ticket machine  \\  
+    \textbf{WP3} & User approaches the shop  \\
+    \textbf{WP4} & User show the QR code to scanner  \\
+    \textbf{WP5} & User checkouts the shop  \\
+    \hline
+\end{longtable}
+\clearpage
+
+\subsubsection{Shared phenomena}
+% Shared phenomena table 
+\renewcommand{\Vline}{\color{tableBorderColor} \vrule width 1pt}
+\def\arraystretch{1.5}
+
+\arrayrulecolor{tableBorderColor}
+\setlength\arrayrulewidth{1pt}
+\rowcolors{2}{white}{tableHighlightColor}
+\setlength\LTleft{0pt}
+
+\begin{longtable}{ !\Vline c !\Vline l !\Vline}
+    \hline
+    \textbf{SP1} & Receive a notification that it is user turn for shopping \\
+    \textbf{SP2} & Receive a notification that it is better user to approach to shop based on user's location \\
+    \textbf{SP3} & Generate QR code \\
+    \textbf{SP4} & User choose which category wants to buy \\
+    \textbf{SP5} & Manager define his store \\
+    \textbf{SP6} & Receive information for booking a visit \\
+    \textbf{SP7} & Suggest free slots to user \\
+    \textbf{SP8} & Read QR code for entering the store \\
+    \hline
+\end{longtable}
+
+\subsubsection{Goals}
+% Goal table 
+\renewcommand{\Vline}{\color{tableBorderColor} \vrule width 1pt}
+\def\arraystretch{1.5}
+
+\arrayrulecolor{tableBorderColor}
+\setlength\arrayrulewidth{1pt}
+\rowcolors{2}{white}{tableHighlightColor}
+\setlength\LTleft{0pt}
+
+\begin{longtable}{ !\Vline c !\Vline l !\Vline}
+    \hline
+    \textbf{G1} & Allow user to line up for a specific store \\
+    \textbf{G2} & Allow user to book a visit for a specific store \\
+    \textbf{G3} & Allow store to generate a ticket for whom they don't use electronic devices \\
+    \textbf{G4} & Estimate the waiting time for each person \\
+    \textbf{G5} & Notify user to approach store \\
+    \textbf{G6} & Notify user when it is their turn\\
+    \textbf{G7} & Suggest people free slots to book a visit \\
+    \textbf{G8} & Allow manager to define their store in the system \\
+    \textbf{G9} & Allow users to enter the store \\
+    \textbf{G10} & Allow users checkout from the store \\
+    \hline
+\end{longtable}
+
+\subsection{Definitions, Acronyms, Abbreviations}
+\subsubsection{Definitions}
+
+\arrayrulecolor{tableBorderColor}
+\setlength\arrayrulewidth{1pt}
+\rowcolors{2}{white}{tableHighlightColor}
+\setlength\LTleft{0pt}
+\begin{longtable}{ !\Vline l !\Vline l !\Vline}
+    \hline
+    \textbf{Manager}        & A person who manages the shop\\
+    \textbf{User}           & A regular citizen who wants to shop\\
+    \textbf{Clerk}          & A person who works for a specific shop\\
+    \textbf{Lineup}         & An imaginary queue of current person who wants go to shop\\
+    \textbf{Ticket Machine} & A stand that clerk can get and print ticket\\
+    \textbf{Scanner}        & A device that scans QR code\\
+    \textbf{QR Code}        & is a type of matrix barcode (or two-dimensional barcode)\\
+    \hline
+\end{longtable}
+\clearpage
+
+\subsubsection{Acronyms}
+
+\arrayrulecolor{tableBorderColor}
+\setlength\arrayrulewidth{1pt}
+\rowcolors{2}{white}{tableHighlightColor}
+\setlength\LTleft{0pt}
+\begin{longtable}{ !\Vline l !\Vline l !\Vline}
+    \hline
+    \textbf{RASD}   & Requirement Analysis and Specification Document\\
+    \textbf{GPS}    & Global Positioning System\\
+    \textbf{app}    & Application\\
+    \textbf{API}    & Application Programming Interface\\
+    \textbf{QR Code}& Quick Responsible code\\
+    \textbf{DDoS}   & Distributed Denial of Service\\
+    \hline
+\end{longtable}
+
+\subsubsection{Abbreviations}
+
+\arrayrulecolor{tableBorderColor}
+\setlength\arrayrulewidth{1pt}
+\rowcolors{2}{white}{tableHighlightColor}
+\setlength\LTleft{0pt}
+\begin{longtable}{ !\Vline c !\Vline l !\Vline}
+    \hline
+    \textbf{WPn}    & World Phenomenon number n\\
+    \textbf{SPn}    & Shared Phenomenon  number n\\
+    \textbf{Gn}     & Goal number n\\
+    \textbf{BS}     & Basic Service of CLup\\
+    \textbf{AF1}    & Advance Function 1 of CLup\\
+    \textbf{AF2}    & Advance Function 2 of CLup\\
+    \textbf{Rn}     & Requirement number n\\
+    \textbf{Dn}     & Domain assumption number n\\
+    \textbf{Cn}     & Constraint number n\\
+    \hline
+\end{longtable}
+
+\subsection{Revision history}
+
+\arrayrulecolor{tableBorderColor}
+\setlength\arrayrulewidth{1pt}
+\rowcolors{2}{white}{tableHighlightColor}
+\setlength\LTleft{0pt}
+\begin{longtable}{ !\Vline c !\Vline l !\Vline}
+    \hline
+    \textbf{Date}   & \textbf{Modifications}\\
+    \textbf{14/12/2020}     & First version\\
+    \textbf{23/12/2020}     & \begin{minipage} [t] {0.9\textwidth} 
+      \begin{itemize}
+      \item Adding alloy models and alloy code.
+      \item Update Class Diagram.
+      \item Adding Mockup images.
+     \end{itemize} 
+     \vspace{0.5em}
+    \end{minipage}
+    \\
+    \hline
+\end{longtable}
+
+
+\subsection{Reference Documents}
+
+\begin{itemize}
+    \item Specification Document: "R\&DD Assignment A.Y. 2020-2021.pdf"
+    \item Slides of the lectures.
+\end{itemize}
+
+\subsection{Document Structure}
+This document is divided in six sections.
+\begin{enumerate}
+    \item \textbf{Chapter 1} describes the purpose of this document and contains the description of the given problem we want to solve with our application. We state the goals of CLup and we describe the phenomena related to the "world" where it will be used and the ones related to our system.
+    
+    \item \textbf{Chapter 2} is about presenting the product perspective, including details on how we abstracted the problem using a class diagram. We describe the main functions of the application using also some state diagrams. We resent the needs of the potential users of the application. Finally we state the domain assumptions and the dependencies.
+    
+    \item \textbf{Chapter 3} contains the external interface requirements, including: user interfaces, hardware interfaces, software interfaces and communication interfaces. We define the functional requirements and the use cases. We use class diagrams and sequence diagrams to describe better the use cases and the interaction between different parts of the system.  Lastly we include the performance requirements and the software system attributes.
+    
+    \item \textbf{Chapter 4} contains a model written using the Alloy language in order to describe formally the application
+    
+    \item \textbf{Chapter 5} contains the tables where we reported for each group member the hour spent working on the project
+    
+    \item \textbf{Chapter 6} include the reference documents.
+ \end{enumerate}
+
+\vfill
