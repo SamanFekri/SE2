@@ -19,22 +19,24 @@
 \usepackage{tabularx}
 \usepackage{longtable}
 
-\usepackage{float}
+\usepackage{float} 
 
 \usepackage{caption}
 \captionsetup[figure]{labelfont={bf},labelformat={default},labelsep=period,name={Figure}, font={scriptsize,it}}
+\usepackage{subfig}
+\usepackage{float}
 
 \usepackage[a4paper,bindingoffset=0.2in,%
-left=1in,right=1in,top=1in,bottom=1in,%
-footskip=.25in]{geometry}
+            left=1in,right=1in,top=1in,bottom=1in,%
+            footskip=.25in]{geometry}
 
 \usepackage{hyperref}
 \usepackage{multirow}
 
 \usepackage{listings}
+\usepackage{enumitem}
 
 \begin{document}
-
 
 
 % \maketitle
@@ -56,17 +58,21 @@ footskip=.25in]{geometry}
 % \bibliographystyle{plain}
 % \bibliography{references}
 
-    \include{parts/frontpage}
+\include{parts/frontpage}
 
-    \include{parts/section1}
+\tableofcontents
 
-    \include{parts/section2/section2}
+\listoffigures
 
-    \include{parts/section3/section3}
+\include{parts/section1}
 
-    \include{parts/section4/section4}
+\include{parts/section2/section2}
 
-    \include{parts/section5}
+\include{parts/section3/section3}
 
-    \include{parts/section6}
+\include{parts/section4/section4}
+
+\include{parts/section5}
+
+\include{parts/section6}
 \end{document}

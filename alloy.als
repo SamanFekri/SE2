@@ -84,8 +84,8 @@ sig QRCode {
 
 // State of ticket for entrance
 abstract sig State {}
-one sig Valid extends State{}
-one sig Invalid extends State{}
+lone sig Valid extends State{}
+lone sig Invalid extends State{}
 
 sig Ticket {
 	qr: one QRCode,
