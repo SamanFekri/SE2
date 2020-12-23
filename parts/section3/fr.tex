@@ -19,7 +19,7 @@
     \textbf{R7} & Managers can activate advance function 2 (send suggestions) on their shop\\
     \textbf{R8} & Users must accept the GPS location for the application\\
     \textbf{R9} & Users could see the list of shops are around them\\
-    \textbf{R10} & Users could go to current line-up queue for specific shop \\
+    \textbf{R10} & Users could see the list of shops are around them \\
     \textbf{R11} & Users could see their ticket (QR code) and estimated waiting time \\
     \textbf{R12} & Users could "book a time" to visit specific shop \\
     \textbf{R13} & Users could choose for which categories they go shopping when they book a visit \\
@@ -72,19 +72,171 @@
 \setlength\LTleft{0pt}
 \begin{longtable}{ !\Vline c !\Vline p{0.9\linewidth} !\Vline}
     \hline
-    \cellcolor{tableHighlightColor} \textbf{G1} & Estimate waiting time\\ \hline
-    \cellcolor{tableHighlightColor} \textbf{G2} & Estimate waiting time\\ \hline
-    \cellcolor{tableHighlightColor} \textbf{G3} & Estimate waiting time\\ \hline
-    \cellcolor{tableHighlightColor} \textbf{G4} & Estimate waiting time\\ \hline
-    \cellcolor{tableHighlightColor} \textbf{G5} & Estimate waiting time\\ \hline
-    \cellcolor{tableHighlightColor} \textbf{G6} & Estimate waiting time\\ \hline
-    \cellcolor{tableHighlightColor} \textbf{G7} & Estimate waiting time\\ \hline
-    \cellcolor{tableHighlightColor} \textbf{G8} & Estimate waiting time\\ \hline
-    \cellcolor{tableHighlightColor} \textbf{G9} & Estimate waiting time\\ \hline
-    \cellcolor{tableHighlightColor} \textbf{G10} & Estimate waiting time\\ \hline
-    \cellcolor{purpleHiglight} \textbf{Name} & Estimate waiting time\\ \hline
-    \cellcolor{pinkHighlight} \textbf{Name} & Estimate waiting time\\
+    \cellcolor{tableHighlightColor} \textbf{G1} & Allow user to line up for a specific store\\ \hline
+     \cellcolor{purpleHiglight} \textbf{D1} & The internet works properly\\ \hline
+      \cellcolor{purpleHiglight} \textbf{D2} &  Its better for users to have smartphones\\ \hline
+       \cellcolor{purpleHiglight} \textbf{D4} & Estimate waiting time\\ \hline
+        \cellcolor{purpleHiglight} \textbf{D6} & the app is always available and able to generate QR codes\\ \hline
+         \cellcolor{purpleHiglight} \textbf{D10} & the slots shown by app is correct and updated every second for booking part\\ \hline
+          \cellcolor{purpleHiglight} \textbf{D11} &  the QR code generator which called ticket machine for those who doesn't have smartphones works properly all the time\\ \hline
+    \cellcolor{pinkHighlight} \textbf{R1} & Users certified with an authentication\\
     \hline
+    \cellcolor{pinkHighlight} \textbf{R9} & Users could see the list of shops are around them\\
+    \hline
+    \cellcolor{pinkHighlight} \textbf{R10} & Users could see the list of shops are around them\\
+    \hline
+    \cellcolor{pinkHighlight} \textbf{R11} & Users could see their ticket (QR code) and estimated waiting time\\
+    \hline
+    \cellcolor{pinkHighlight} \textbf{R14} & The system must generate suitable QR code\\
+    \hline
+    \cellcolor{pinkHighlight} \textbf{R16} & The system must make current line-up queue based on users booking\\
+    \hline
+    \cellcolor{tableHighlightColor} \textbf{G2} & Allow user to book a visit for a specific store\\ \hline
+     \cellcolor{purpleHiglight} \textbf{D1} & The internet works properly\\ \hline
+      \cellcolor{purpleHiglight} \textbf{D2} &  Its better for users to have smartphones\\ \hline
+       \cellcolor{purpleHiglight} \textbf{D6} & the app is always available and able to generate QR codes\\ \hline
+        \cellcolor{purpleHiglight} \textbf{D7} & QR code on the ticket of each user must be scan first then let the user to enter the shop.\\ \hline
+         \cellcolor{purpleHiglight} \textbf{D8} & the QR code shown by users to scanner is valid\\ \hline
+          \cellcolor{purpleHiglight} \textbf{D9} & At the checkout, QR code on the ticket of each user must be scanned.\\ \hline
+           \cellcolor{purpleHiglight} \textbf{D10} & the slots shown by app is correct and updated every second for booking part\\ \hline
+            \cellcolor{purpleHiglight} \textbf{D12} &  QR code scanner just scan the valid QR codes which means it shouldn't scan after the estimated time\\ \hline
+    \cellcolor{pinkHighlight} \textbf{R1} & Users certified with an authentication\\
+    \hline
+    \cellcolor{pinkHighlight} \textbf{R9} & Users could see the list of shops are around them\\
+    \hline
+    \cellcolor{pinkHighlight} \textbf{R11} & Users could see their ticket (QR code) and estimated waiting time\\
+    \hline
+    \cellcolor{pinkHighlight} \textbf{R12} & Users could "book a time" to visit specific shop\\
+    \hline
+    \cellcolor{pinkHighlight} \textbf{R13} & Users could choose for which categories they go shopping when they book a visit\\
+    \hline
+    \cellcolor{pinkHighlight} \textbf{R14} & The system must generate suitable QR code\\
+    \hline
+    \cellcolor{pinkHighlight} \textbf{R16} & The system must make current line-up queue based on users booking\\
+    \hline
+    \cellcolor{pinkHighlight} \textbf{R21} & The clerk could add a person to current line-up queue\\
+    \hline
+    \cellcolor{pinkHighlight} \textbf{R22} & The clerk could print ticket\\
+    \hline
+    \cellcolor{tableHighlightColor} \textbf{G3} & Allow store to generate a ticket for whom they don't use electronic devices\\ \hline
+     \cellcolor{purpleHiglight} \textbf{D6} & the app is always available and able to generate QR codes\\ \hline
+      \cellcolor{purpleHiglight} \textbf{D7} & QR code on the ticket of each user must be scan first then let the user to enter the shop.\\ \hline
+       \cellcolor{purpleHiglight} \textbf{D8} & the QR code shown by users to scanner is valid\\ \hline
+        \cellcolor{purpleHiglight} \textbf{D9} & At the checkout, QR code on the ticket of each user must be scanned.\\ \hline
+         \cellcolor{purpleHiglight} \textbf{D11} &  the QR code generator which called ticket machine for those who doesn't have smartphones works properly all the time\\ \hline
+          \cellcolor{purpleHiglight} \textbf{D12} &  QR code scanner just scan the valid QR codes which means it shouldn't scan after the estimated time\\ \hline
+           \cellcolor{purpleHiglight} \textbf{D14} & Ticket machine should have enough paper to print QR codes for those who doesn't have smartphone\\ \hline
+            \cellcolor{purpleHiglight} \textbf{D15} &  if users don't have electronic device, they can use QR codes at the supermarket in person by ticket machine\\ \hline
+    \cellcolor{pinkHighlight} \textbf{R11} & Users could see their ticket (QR code) and estimated waiting time\\
+    \hline
+    \cellcolor{pinkHighlight} \textbf{R14} & The system must generate suitable QR code\\
+    \hline
+    \cellcolor{pinkHighlight} \textbf{R26} & Users can ask a clerk to give them a ticket\\
+    \hline
+    \cellcolor{tableHighlightColor} \textbf{G4} & Estimate the waiting time for each person\\ \hline
+     \cellcolor{purpleHiglight} \textbf{D3} & users should be at the spot right on the specific time which is mentioned in the app\\ \hline
+      \cellcolor{purpleHiglight} \textbf{D4} & Estimate waiting time\\ \hline
+       \cellcolor{purpleHiglight} \textbf{D9} & At the checkout, QR code on the ticket of each user must be scanned.\\ \hline
+        \cellcolor{purpleHiglight} \textbf{D10} & the slots shown by app is correct and updated every second for booking part\\ \hline
+         \cellcolor{purpleHiglight} \textbf{D13} &  users do not have much delay at the supermarket and they exit at almost certain time\\ \hline
+    \cellcolor{pinkHighlight} \textbf{R1} & Users certified with an authentication\\
+    \hline
+    \cellcolor{pinkHighlight} \textbf{R8} & Users must accept the GPS location for the application\\
+    \hline
+    \cellcolor{pinkHighlight} \textbf{R10} & Users could see the list of shops are around them\\
+    \hline
+    \cellcolor{pinkHighlight} \textbf{R11} & Users could see their ticket (QR code) and estimated waiting time\\
+    \hline
+    \cellcolor{pinkHighlight} \textbf{R12} & Users could "book a time" to visit specific shop\\
+    \hline
+    \cellcolor{pinkHighlight} \textbf{R13} & Users could choose for which categories they go shopping when they book a visit\\
+    \hline
+    \cellcolor{pinkHighlight} \textbf{R14} & The system must generate suitable QR code\\
+    \hline
+    \cellcolor{pinkHighlight} \textbf{R15} & The system must estimate the waiting time for each user\\
+    \hline
+    \cellcolor{pinkHighlight} \textbf{R16} & The system must make current line-up queue based on users booking\\
+    \hline
+    \cellcolor{pinkHighlight} \textbf{R23} & After the user checked out, the system analyze shopping list and duration time and add it to the user's visit history\\
+    \hline
+    \cellcolor{pinkHighlight} \textbf{R24} & The system could estimate the category of shopping and duration of shopping for specific user\\
+    \hline
+    \cellcolor{pinkHighlight} \textbf{R25} & The system estimate the time based on user characteristic\\
+    \hline
+    \cellcolor{pinkHighlight} \textbf{R28} & If managers update a shop the estimated time and book visits will be recalculate\\
+    \hline
+    \cellcolor{pinkHighlight} \textbf{R29} & Manager choose the capacity of shop\\
+    \hline
+    \cellcolor{pinkHighlight} \textbf{R30} & Manager choose the category of each section in the shop and their capacity\\
+    \hline
+    \cellcolor{pinkHighlight} \textbf{R31} & Manager choose working hour of the shop\\
+    \hline
+    \cellcolor{tableHighlightColor} \textbf{G5} & Notify user to approach store\\ \hline
+     \cellcolor{purpleHiglight} \textbf{D1} & The internet works properly\\ \hline
+      \cellcolor{purpleHiglight} \textbf{D2} &  Its better for users to have smartphones\\ \hline
+       \cellcolor{purpleHiglight} \textbf{D4} & Estimate waiting time\\ \hline
+    \cellcolor{pinkHighlight} \textbf{R1} & Users certified with an authentication\\
+    \hline
+    \cellcolor{pinkHighlight} \textbf{R8} & Users must accept the GPS location for the application\\
+    \hline
+    \cellcolor{pinkHighlight} \textbf{R15} & The system must estimate the waiting time for each user\\
+    \hline
+    \cellcolor{pinkHighlight} \textbf{R17} & The system sends a notification to user to approach shop based on current location of user and location of shop\\
+    \hline
+    \cellcolor{tableHighlightColor} \textbf{G6} & Notify user when it is their turn\\ \hline
+     \cellcolor{purpleHiglight} \textbf{D1} & Estimate waiting time\\ \hline
+      \cellcolor{purpleHiglight} \textbf{D2} & Estimate waiting time\\ \hline
+       \cellcolor{purpleHiglight} \textbf{D4} & Estimate waiting time\\ \hline
+    \cellcolor{pinkHighlight} \textbf{R1} & Users certified with an authentication\\
+    \hline
+    \cellcolor{pinkHighlight} \textbf{R8} & Users must accept the GPS location for the application\\
+    \hline
+    \cellcolor{pinkHighlight} \textbf{R17} & The system sends a notification to user to approach shop based on current location of user and location of shop\\
+    \hline
+    
+    \cellcolor{tableHighlightColor} \textbf{G8} &  Allow manager to define their store in the system\\ \hline
+     \cellcolor{purpleHiglight} \textbf{D1} & The internet works properly\\ \hline
+      \cellcolor{purpleHiglight} \textbf{D2} &  Its better for users to have smartphones\\ \hline
+       \cellcolor{purpleHiglight} \textbf{D5} & Clerks are connected to device Which is registered for the specific shop\\ \hline
+    \cellcolor{pinkHighlight} \textbf{R2} & Managers certified with an authentication\\
+    \hline
+    \cellcolor{pinkHighlight} \textbf{R3} & Managers should register to the application with extra mandatory fields\\
+    \hline
+    \cellcolor{pinkHighlight} \textbf{R4} & Only managers can create shop\\
+    \hline
+    \cellcolor{pinkHighlight} \textbf{R5} &  Only managers can update their shop\\
+    \hline
+    \cellcolor{pinkHighlight} \textbf{R6} & Managers can activate advance function 1 (allow users booking) on their shop\\
+    \hline
+    \cellcolor{pinkHighlight} \textbf{R29} & Manager choose the capacity of shop\\
+    \hline
+    \cellcolor{pinkHighlight} \textbf{R30} & Manager choose the category of each section in the shop and their capacity\\
+    \hline
+    \cellcolor{pinkHighlight} \textbf{R31} & Manager choose working hour of the shop\\
+    \hline
+    \cellcolor{tableHighlightColor} \textbf{G9} & Allow users to enter the store\\ \hline
+     \cellcolor{purpleHiglight} \textbf{D3} & users should be at the spot right on the specific time which is mentioned in the app\\ \hline
+      \cellcolor{purpleHiglight} \textbf{D4} & the time estimation by the app is correct\\ \hline
+       \cellcolor{purpleHiglight} \textbf{D5} & Clerks are connected to device Which is registered for the specific shop\\ \hline
+        \cellcolor{purpleHiglight} \textbf{D7} & QR code on the ticket of each user must be scan first then let the user to enter the shop.\\ \hline
+         \cellcolor{purpleHiglight} \textbf{D8} & the QR code shown by users to scanner is valid\\ \hline
+          \cellcolor{purpleHiglight} \textbf{D12} &  QR code scanner just scan the valid QR codes which means it shouldn't scan after the estimated time\\ \hline
+    \cellcolor{pinkHighlight} \textbf{R19} & After user ticket scanned for entrance, system change status of ticket to invalidate for entrance\\
+    \hline
+    \cellcolor{pinkHighlight} \textbf{R20} & The clerk must scan the user ticket\\
+    \hline
+    \cellcolor{pinkHighlight} \textbf{R27} & If specific time past from user turn to enter his/her ticket will be invalidate for entrance\\
+    \hline
+    \cellcolor{tableHighlightColor} \textbf{G10} & Allow users checkout from the store\\ \hline
+     \cellcolor{purpleHiglight} \textbf{D6} & the app is always available and able to generate QR codes\\ \hline
+      \cellcolor{purpleHiglight} \textbf{D9} & At the checkout, QR code on the ticket of each user must be scanned.\\ \hline
+    \cellcolor{pinkHighlight} \textbf{R20} & The clerk must scan the user ticket\\
+    \hline
+    \cellcolor{pinkHighlight} \textbf{R23} & After the user checked out, the system analyze shopping list and duration time and add it to the user's visit history\\
+    \hline
+    \cellcolor{pinkHighlight} \textbf{R24} & The system could estimate the category of shopping and duration of shopping for specific user\\
+    \hline
+    
 \end{longtable}
 \subsubsection{Use cases}
 \paragraph{Use case Description} \hfill
@@ -614,28 +766,26 @@
 % \end{longtable}
 \subsubsection{Scenarios}
 \newlist{SC}{enumerate}{1}
-\setlist[SC]{label=\bfseries Scenario \arabic*:, itemindent=4em}
-\begin{SC}
-    \item \bfseries vhm
+\setlist[SC]{label=\bfseries Scenario \arabic*:, itemindent=0em}
+\begin{SC}[wide]
+    \item \textbf{General}\\
+    Sarah is an employed person who is busy all the time so managing her time is really a big deal for her this she always look for things which saves her time. on the other hand, since COVID-19 has spread all over the world, governments try to keep people's social distancing everywhere. so for supermarkets it becomes a trouble since for each supermarket, maximum 10 people can be in there and the others should wait outside in a line and it causes meters of line. in this case Sarah tends to use this application as she really cares about her time. using this app is mandatory though so it is really useful for her.\\
+    now she is running out of groceries and she want to buy some stuff today so she downloaded the application from google play and starts using it. firstly she has to sign up in the application. after inserting some information about herself, she access the first page which she should insert the supermarket name which she wants to go and then she selects the "Line up" methods as she wants to go to supermarket as soon as possible.\\
+    no she enters the page which she can see the information she inserted and and also the exact location by google map that she can access. so finally she touches the "Generate QR code" button and a bar code appears on her screen.\\
+    she can see the estimated time and number of people before her so she can manage her time to be there 5 minutes before and enter the supermarket and shop as always.\\
+    
+    \item \textbf{Book a Visit} \\
+    Peter wants to visit his family after so long of being far from them because he's a student and due to COVID-19 he couldn't come back to his country. so meantime he finds a flight to his country next week. so he wants to buy some stuff for his family and bring for them. so he opens the application and select the nearest  supermarket and choose "Book a visit" method as he wants to go to supermarket in some days. so as soon as he select "book a visit" another part appears t which he has to select a slot which is free. so he clicks on that and selected 22th of December which was available and then he picks the perfect available time for him which is 5 P.M and finally click on the "generate QR code" button and download the pdf in case he wont be able to have connection to scan the code.\\
+    
+    \item \textbf{Canceling request} \\
+    Joe wants to cook pizza for his guest but he figured out that he ran out of cheese so he calls his friend to borrow some but he did not reply. so immediately he opens the CLup application to go to supermarket to buy it. so he opens the app and choose "line-up" method and get his QR code. he looked at the estimated time and got panic cause it is about an hour and his guest is on way to his home. so he decided to cancel the request and go borrow from his neighbor. so at the bottom of the page he touched the "delete this request" part.\\
+    
+    \item \textbf{invalidation of QR code} \\
+    Anna is a girl who is not really on time. she is invited to her friends party tonight so she wants to buy a champagne for her friend from a supermarket. so she opens up the application and does the process for line up method till she got her QR code and her estimated time is in 30 minutes. afterward she started to get ready for that birthday party, and she forgets to check the time so as soon as she saw the clock she figured out that she just have 2 minutes to get there so she runs to get there but she is a bit late but she decides to stay in the line to see what will be happen. after 5 minutes its her turn to scan her code but her code is not valid anymore and both application and scan system shows that the QR code cannot be scanned anymore so she gets out of the line and generate another code.\\
+    
+    \item \textbf{Getting tickets in person} \\
+    Alina is a cute grandma to her 5 grandchild. most of the time she hold a party for them at weekends and invite them for warm traditional food. this weekend she is gonna make carbonara so she needs some ingredients. she is actually not really familiar with technology and smartphones since she is 82 years old. as always she gets ready to go to supermarket. she knows that since the COVID-19 has spread, she has to get a QR code to enter. so she goes to the ticket machine and press the "print" and then she has the code in her hand. now she can see that the estimated time for her in written 15 minutes so she decides to go and have a walk for 10 minutes in the park and come back. after about 10 minutes she comes back and stand in the line and after 5 minutes she scans her code and enter the supermarket.\\
+    
+    \item \textbf{Manager registration} \\
+    Paolo is a manager of the branch Via Benedetto Carrefour and and he wants to register his supermarket in the application so that it gonna be available for people to use codes to access that.  so he downloads the application from google play and enter the application as a manager after signing up. so he access the form which is about the supermarket information. first off all he enters the shop title as "Via Benedetto" carrefour and then click on the location part and insert the exact location on map. for working hours he sets from 8 A.M to 10 P.M and for the capacity of the shop he sets 12 people at the same time. moreover he select 3 categories as "Protein", "kitchen equipment" and "bread" and 4 people for each. lastly, he selects both methods for customers which are lining up and booking a visit. after submitting he sees that his request has been saved successfully and he can see the request history from the hamburger menu at top left.\\
 \end{SC}
-scenario 1: General
-Sarah is an employed person who is busy all the time so managing her time is really a big deal for her this she always look for things which saves her time. on the other hand, since COVID-19 has spread all over the world, governments try to keep people's social distancing everywhere. so for supermarkets it becomes a trouble since for each supermarket, maximum 10 people can be in there and the others should wait outside in a line and it causes meters of line. in this case Sarah tends to use this application as she really cares about her time. using this app is mandatory though so it is really useful for her.
-now she is running out of groceries and she want to buy some stuff today so she downloaded the application from google play and starts using it. firstly she has to sign up in the application. after inserting some information about herself, she access the first page which she should insert the supermarket name which she wants to go and then she selects the "Line up" methods as she wants to go to supermarket as soon as possible.
-no she enters the page which she can see the information she inserted and and also the exact location by google map that she can access. so finally she touches the "Generate QR code" button and a bar code appears on her screen.
-she can see the estimated time and number of people before her so she can manage her time to be there 5 minutes before and enter the supermarket and shop as always
-
-scenario 2: Book a Visit
-Peter wants to visit his family after so long of being far from them because he's a student and due to COVID-19 he couldn't come back to his country. so meantime he finds a flight to his country next week. so he wants to buy some stuff for his family and bring for them. so he opens the application and select the nearest  supermarket and choose "Book a visit" method as he wants to go to supermarket in some days. so as soon as he select "book a visit" another part appears t which he has to select a slot which is free. so he clicks on that and selected 22th of December which was available and then he picks the perfect available time for him which is 5 P.M and finally click on the "generate QR code" button and download the pdf in case he wont be able to have connection to scan the code.
-
-
-scenario 3: Canceling request
-Joe wants to cook pizza for his guest but he figured out that he ran out of cheese so he calls his friend to borrow some but he did not reply. so immediately he opens the CLup application to go to supermarket to buy it. so he opens the app and choose "line-up" method and get his QR code. he looked at the estimated time and got panic cause it is about an hour and his guest is on way to his home. so he decided to cancel the request and go borrow from his neighbor. so at the bottom of the page he touched the "delete this request" part
-
-scenario 4: invalidation of QR code 
-Anna is a girl who is not really on time. she is invited to her friends party tonight so she wants to buy a champagne for her friend from a supermarket. so she opens up the application and does the process for line up method till she got her QR code and her estimated time is in 30 minutes. afterward she started to get ready for that birthday party, and she forgets to check the time so as soon as she saw the clock she figured out that she just have 2 minutes to get there so she runs to get there but she is a bit late but she decides to stay in the line to see what will be happen. after 5 minutes its her turn to scan her code but her code is not valid anymore and both application and scan system shows that the QR code cannot be scanned anymore so she gets out of the line and generate another code.
-
-scenario 5:Getting tickets in person
-Alina is a cute grandma to her 5 grandchild. most of the time she hold a party for them at weekends and invite them for warm traditional food. this weekend she is gonna make carbonara so she needs some ingredients. she is actually not really familiar with technology and smartphones since she is 82 years old. as always she gets ready to go to supermarket. she knows that since the COVID-19 has spread, she has to get a QR code to enter. so she goes to the ticket machine and press the "print" and then she has the code in her hand. now she can see that the estimated time for her in written 15 minutes so she decides to go and have a walk for 10 minutes in the park and come back. after about 10 minutes she comes back and stand in the line and after 5 minutes she scans her code and enter the supermarket
-
-scenario 6: Manager registration
-Paolo is a manager of the branch Via Benedetto Carrefour and and he wants to register his supermarket in the application so that it gonna be available for people to use codes to access that.  so he downloads the application from google play and enter the application as a manager after signing up. so he access the form which is about the supermarket information. first off all he enters the shop title as "Via Benedetto" carrefour and then click on the location part and insert the exact location on map. for working hours he sets from 8 A.M to 10 P.M and for the capacity of the shop he sets 12 people at the same time. moreover he select 3 categories as "Protein", "kitchen equipment" and "bread" and 4 people for each. lastly, he selects both methods for customers which are lining up and booking a visit. after submitting he sees that his request has been saved successfully and he can see the request history from the hamburger menu at top left.
