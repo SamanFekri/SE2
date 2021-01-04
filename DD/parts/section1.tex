@@ -1,0 +1,136 @@
+\section{Introduction}
+\subsection{Purpose}
+\paragraph{}
+This is the Design Document (DD) of CLup application. The purpose of this document is to discuss more technical aspects regarding architectural and design choices that must be made, so as to follow well-oriented implementation and testing processes. This document is to provide more technical and detailed information about the software discussed in the RASD document.\\
+In this DD we present hardware and software architecture of the system in terms of components and interactions among those components. Furthermore, this document describes a set of design characteristics required for the implementation by introducing constraints and quality attributes.
+It also gives a detailed presentation of the implementation plan, integration plan and the testing plan.\\
+In this document we mostly talk about features that listed below:
+\begin{itemize}
+    \item The High-level architecture of the system.
+    \item Main components of the system.
+    \item Interfaces provided by the components.
+    \item Design patterns.
+\end{itemize}
+
+Stakeholders are invited to read this document in order to understand the characteristics of the project being aware of the choices that have been made to offer all the functionalities also satisfying the quality requirements.
+\subsection{Scope}
+
+The software wants give them the possibility to line up for a super market and notify them when it's their turn.
+
+\begin{itemize}
+\item \textbf{basic function:} Allow application to retrieve a number for users to be in the line waiting for their numbers to be close. Then they will go and stand in the line but in a way that they wont waste their time standing in a queue for long time
+\item \textbf{advanced function 1:} The second functionality point out about booking a visit from application for supermarket which is similar to booking a visit for museums but has some differences. This feature let application for customer to indicate the approximate expected duration of the visit. Alternatively, for long- 
+term customers, this time could be inferred by the system based on an analysis of the previous visits.  
+The application might also allow users to indicate, if not the exact list of items that they intend to  
+purchase, the categories of items that they intend to buy. This would allow the application to plan visits  
+in a finer way, for example allowing more people in the store, if it knows that they are going to buy
+\end{itemize}
+
+\subsection{Definitions, Acronyms, Abbreviations}
+\subsubsection{Definitions}
+
+\arrayrulecolor{tableBorderColor}
+\setlength\arrayrulewidth{1pt}
+\rowcolors{2}{white}{tableHighlightColor}
+\setlength\LTleft{0pt}
+\begin{longtable}{ !\Vline l !\Vline l !\Vline}
+    \hline
+    \textbf{Manager}        & A person who manages the shop\\
+    \textbf{User}           & A regular citizen who wants to shop\\
+    \textbf{Clerk}          & A person who works for a specific shop\\
+    \textbf{Lineup}         & An imaginary queue of current person who wants go to shop\\
+    \textbf{Ticket Machine} & A stand that clerk can get and print ticket\\
+    \textbf{Scanner}        & A device that scans QR code\\
+    \textbf{QR Code}        & is a type of matrix barcode (or two-dimensional barcode)\\
+    \hline
+\end{longtable}
+\clearpage
+
+\subsubsection{Acronyms}
+
+\arrayrulecolor{tableBorderColor}
+\setlength\arrayrulewidth{1pt}
+\rowcolors{2}{white}{tableHighlightColor}
+\setlength\LTleft{0pt}
+\begin{longtable}{ !\Vline l !\Vline l !\Vline}
+    \hline
+    \textbf{DD}     & Design Document\\
+    \textbf{RASD}   & Requirement Analysis and Specification Document\\
+    \textbf{GPS}    & Global Positioning System\\
+    \textbf{app}    & Application\\
+    \textbf{API}    & Application Programming Interface\\
+    \textbf{QR Code}& Quick Responsible code\\
+    \textbf{DDoS}   & Distributed Denial of Service\\
+    \hline
+\end{longtable}
+
+\subsubsection{Abbreviations}
+
+\arrayrulecolor{tableBorderColor}
+\setlength\arrayrulewidth{1pt}
+\rowcolors{2}{white}{tableHighlightColor}
+\setlength\LTleft{0pt}
+\begin{longtable}{ !\Vline c !\Vline l !\Vline}
+    \hline
+    \textbf{WPn}    & World Phenomenon number n\\
+    \textbf{SPn}    & Shared Phenomenon  number n\\
+    \textbf{Gn}     & Goal number n\\
+    \textbf{BS}     & Basic Service of CLup\\
+    \textbf{AF1}    & Advance Function 1 of CLup\\
+    \textbf{AF2}    & Advance Function 2 of CLup\\
+    \textbf{Rn}     & Requirement number n\\
+    \textbf{Dn}     & Domain assumption number n\\
+    \textbf{Cn}     & Constraint number n\\
+    \hline
+\end{longtable}
+
+\subsection{Revision history}
+
+\arrayrulecolor{tableBorderColor}
+\setlength\arrayrulewidth{1pt}
+\rowcolors{2}{white}{tableHighlightColor}
+\setlength\LTleft{0pt}
+\begin{longtable}{ !\Vline c !\Vline l !\Vline}
+    \hline
+    \textbf{Date}   & \textbf{Modifications}\\
+    \textbf{14/12/2020}     & First version\\
+    \textbf{23/12/2020}     & \begin{minipage} [t] {0.9\textwidth} 
+      \begin{itemize}
+      \item Adding alloy models and alloy code.
+      \item Update Class Diagram.
+      \item Adding Mockup images.
+     \end{itemize} 
+     \vspace{0.5em}
+    \end{minipage}
+    \\
+    \hline
+\end{longtable}
+
+
+\subsection{Reference Documents}
+
+\begin{itemize}
+    \item Specification Document: "R\&DD Assignment A.Y. 2020-2021.pdf"
+    \item Slides of the lectures.
+\end{itemize}
+
+\clearpage
+\subsection{Document Structure}
+This document is divided in seven sections.
+\begin{itemize}
+    \item \textbf{Chapter 1} describes the scope and purpose of the DD, including the structure of the document and the set of definitions, acronyms and abbreviations used.
+    
+    \item \textbf{Chapter 2} contains the architectural design choice, it includes all the components, the interfaces, the technologies (both hardware and software) used for the development of the application. It also includes the main functions of the interfaces and the processes in which they are utilised (Runtime view and component interfaces). Finally, there is the explanation of the architectural patterns chosen with the other design decisions.
+    
+    \item \textbf{Chapter 3} shows how the user interface should be on the mobile and web application.
+    
+    \item \textbf{Chapter 4} describes the connection between the RASD and the DD, showing the matching between requirements described previously with the elements which compose the architecture of the application.
+    
+    \item \textbf{Chapter 5} traces a plan for the development of components to maximize the efficiency of the developer team and the quality controls team. It is divided in two sections: implementation and integration. It also includes the testing strategy.
+    
+    \item \textbf{Chapter 6}shows the effort spent for each member of the group.
+    
+    \item \textbf{Chapter 7} include the reference documents.
+ \end{itemize}
+
+\vfill
