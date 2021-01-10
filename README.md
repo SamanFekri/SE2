@@ -7,6 +7,6 @@ The authors are:
 
 ### Document links on overleaf
 
-You can see the documentation from her:
+You can see the documentation from here: (overleaf)
 -   [RASD](https://www.overleaf.com/read/bfbgmvmswxvd)
 -   [DD](https://www.overleaf.com/read/wsyvkzhdkcwz)
