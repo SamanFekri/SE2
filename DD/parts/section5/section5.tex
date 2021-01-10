@@ -15,25 +15,54 @@ After that we could implement the access manager because it is impossible to imp
 Two important service we use are Notification manager and Map manager this two components are connected to external components of our system so it's good to implement them at this stage.\\ \\
 No we could implement the book manager. At this stage, we could slightly see how our application works and books, after we test this part we implement ticket handler so you could see the ticket and generate them. After the ticket handler is good to implement the estimator. estimator is one of the hard components in this application because, it must estimate user behaviors and it must estimate user arrival time and send proper notification to notification manager.\\ \\
 The Redirector and Web server are implemented at the end its role is to dispatch messages coming from the client to the different parts of the system.\\
-The implementation of the UserMobileApp and of the WebApp, as just said, could be done in parallel with that of the components described before.
+The implementation of the UserMobileApp and the TicketMachine, as just said, could be done in parallel with that of the components described before.
 
 \subsection{Integration Strategy}
 \vspace{0.5cm}
 
 To implement and test the different functionalities of the system a bottom-up approach has been used. The following diagrams describe how the process of implementation and integration testing takes place, according to a bottom-up approach. \\
-1. At first the AccessManager is implemented and unit tested using a driver for
-the components that are still under implementation. It is not a complex component, but
-other components rely on it to provide some services: that’s why it is implemented and
-tested before the others. \\
-2.
 
-3. Then, to implement the functionality of notifying from the system and receiving it by the user, the NotificationMapManager is needed. However, besides the normal driver, also a stub is needed to cope with the lack of communication with the WebServer that has still to be integrated with the rest. The addition of this stub goes in contradiction with the bottom-up approach but is needed in order to proceed with the integration in the application server.\\
-4. to implement the functionality of booking a slot for going to supermarket, the bookingManager is needed. . The addition of this stub goes in
-contradiction with the bottom-up approach but is needed in order to proceed with the integration in the application server.\\
-5.
+\begin{enumerate}
+    
+\item At first the AccessManager is implemented and unit tested using a driver for the components that are still under implementation. It is not a complex component, but other components rely on it to provide some services: that’s why it is implemented and tested before the others. \\
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.2\textwidth,keepaspectratio]{images/IS/IS1.png}
+\end{figure}
 
-6. ,the Estimator is implemented, unit-tested and then integrated
-into the system. It is important to notice that GoogleMapsService will not be unit tested because is offered as a service from a trusted provider: it only needs to be integrated into the system through the Estimator.\\
-7. Then the different drivers are substituted by the Redirector which
-has to be implemented, unit-tested and integrated with the other components of the application server. its role is to allow the flow of called methods from
-the client to the server.\\
+\item Then we implement the ShopManager, because one of the most important enitit y of our application is shop.\\
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.4\textwidth,keepaspectratio]{images/IS/IS2.png}
+\end{figure}
+
+\item Then, to implement the functionality of notifying from the system and receiving it by the user, the NotificationMapManager is needed. However, besides the normal driver, also a stub is needed to cope with the lack of communication with the WebServer that has still to be integrated with the rest. The addition of this stub goes in contradiction with the bottom-up approach but is needed in order to proceed with the integration in the application server.\\
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.4\textwidth,keepaspectratio]{images/IS/IS3.png}
+\end{figure}
+
+\item to implement the functionality of booking a slot for going to supermarket, the bookingManager is needed. . The addition of this stub goes in contradiction with the bottom-up approach but is needed in order to proceed with the integration in the application server.\\
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.5\textwidth,keepaspectratio]{images/IS/IS4.png}
+\end{figure}
+
+\item at the end of the booking we must generate the ticket, so its good to implement the ticketHandler and integerate it with other part of system.
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.6\textwidth,keepaspectratio]{images/IS/IS5.png}
+\end{figure}
+
+\item Then the Estimator is implemented, unit-tested and then integrated into the system. It is important to notice that GoogleMapsService will not be unit tested because is offered as a service from a trusted provider: it only needs to be integrated into the system through the Estimator.\\
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.6\textwidth,keepaspectratio]{images/IS/IS6.png}
+\end{figure}
+
+\item Then the different drivers are substituted by the Redirector which has to be implemented, unit-tested and integrated with the other components of the application server. its role is to allow the flow of called methods from the client to the server.\\
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.6\textwidth,keepaspectratio]{images/IS/IS7.png}
+\end{figure}
+\end{enumerate}
